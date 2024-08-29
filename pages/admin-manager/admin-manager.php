@@ -45,7 +45,7 @@ session_start();
 
         <!-- Navbar start -->
         <?php
-        include '../../../components/navbar/navbar.php';
+        include '../../components/navbar/navbar.php';
         ?>
         <!-- Navbar end -->
 
@@ -100,9 +100,9 @@ session_start();
                                     <div class="col-md-4 mb-2">
                                         <select name=privilage-status id="" class="form-select">
                                             <option value="">Privilege Status</option>
-                                            <option value="user" <?= isset($_GET['privilage-status']) == true ? ($_GET['privilage-status'] == 'user' ? 'selected' : '') : '' ?>>User
+                                            <option value="teacher" <?= isset($_GET['privilage-status']) == true ? ($_GET['privilage-status'] == 'teacher' ? 'selected' : '') : '' ?>>Teacher
                                             </option>
-                                            <option value="admin" <?= isset($_GET['privilage-status']) == true ? ($_GET['privilage-status'] == 'admin' ? 'selected' : '') : '' ?>>Admin
+                                            <option value="student" <?= isset($_GET['privilage-status']) == true ? ($_GET['privilage-status'] == 'student' ? 'selected' : '') : '' ?>>Student
                                             </option>
 
                                         </select>
@@ -154,7 +154,7 @@ session_start();
             </script>
             <!-- scroll to same position when reload. end -->
 
-            <!-- update payment status. start -->
+            <!-- update user status. start -->
             <?php
 
             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["user_id"]) && isset($_POST["status"])) {
@@ -174,7 +174,7 @@ session_start();
                 exit();
             }
 
-            //  update payment Aleart start
+            //  updated user Aleart start
             if (isset($_SESSION['response'])) {
                 echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
                             ' . $_SESSION['response'] . '
@@ -184,9 +184,9 @@ session_start();
 
                 unset($_SESSION['response']);
             }
-            //  update payment Aleart end
+            //  updated user Aleart end
             ?>
-            <!-- update payment status. end -->
+            <!-- update user status. end -->
 
             <!-- update delete status. start -->
             <?php
@@ -237,8 +237,6 @@ session_start();
             }
             ?>
             <!-- update delete status. end -->
-
-
 
             <div class="container-2" id="childScroll" onscroll="saveScrollPositions()">
 
@@ -343,9 +341,9 @@ session_start();
                                                     <!-- Dropdown to select payment status -->
                                                     <select style="width:200px;" class="form-select payment-form-select" name="status" onchange="updatePaymentStatus(<?php echo $row['user_id']; ?>, this.value)">
                                                         <!-- Option for payment status Not yet -->
-                                                        <option value="user" <?php echo ($row["privilage"] == 'user') ? "selected" : ""; ?>>User</option>
+                                                        <option value="teacher" <?php echo ($row["privilage"] == 'teacher') ? "selected" : ""; ?>>teacher</option>
                                                         <!-- Option for payment status Paid -->
-                                                        <option value="admin" <?php echo ($row["privilage"] == 'admin') ? "selected" : ""; ?>>Admin</option>
+                                                        <option value="student" <?php echo ($row["privilage"] == 'student') ? "selected" : ""; ?>>student</option>
                                                     </select>
                                                 </div>
                                             </form>
@@ -451,9 +449,9 @@ session_start();
                                                     <!-- Dropdown to select payment status -->
                                                     <select style="width:200px;" class="form-select payment-form-select" name="status" onchange="updatePaymentStatus(<?php echo $row['user_id']; ?>, this.value)">
                                                         <!-- Option for payment status Not yet -->
-                                                        <option value="user" <?php echo ($row["privilage"] == 'user') ? "selected" : ""; ?>>User</option>
+                                                        <option value="teacher" <?php echo ($row["privilage"] == 'teacher') ? "selected" : ""; ?>>teacher</option>
                                                         <!-- Option for payment status Paid -->
-                                                        <option value="admin" <?php echo ($row["privilage"] == 'admin') ? "selected" : ""; ?>>Admin</option>
+                                                        <option value="student" <?php echo ($row["privilage"] == 'student') ? "selected" : ""; ?>>student</option>
                                                     </select>
                                                 </div>
                                             </form>
