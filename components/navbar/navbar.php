@@ -126,17 +126,17 @@
 
                 <div class="navbar-nav-outer ">
                     <div class="nav-item-outer ">
-                        <a href="/rifna-sem-4-project/page/admin-dashbord/table/admin-dashbord.php" class="nav-link nav-link-home active">HOME</a>
+                        <a href="" class="nav-link nav-link-home active">HOME</a>
                     </div>
                     <div class="nav-item-outer">
-                        <a href="/rifna-sem-4-project/page/AboutUs-page/About-us.php"
+                        <a href=""
                             class="nav-link nav-link-about">ABOUT ATI</a>
                     </div>
 
 
                     <?php if (!isset ($_SESSION['username'])): ?>
                         <div class="nav-item-outer">
-                            <a href="/rifna-sem-4-project/page/login-and-signup-page/index.php"
+                            <a href="/ziyan-sem-4/pages/login-and-signup-page/index.php"
                                 class="nav-link nav-link-login">SIGN IN</a>
                         </div>
                         <div class="nav-item-outer">

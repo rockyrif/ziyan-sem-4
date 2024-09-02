@@ -1,14 +1,14 @@
 <?php
-session_start();
-if ($_SESSION["loggedin"] === true) {
-    header("location:../admin-dashbord/table/admin-dashbord.php");
-    exit;
-}
+// session_start();
+// if ($_SESSION["loggedin"] === true) {
+//     header("location:../admin-dashbord/table/admin-dashbord.php");
+//     exit;
+// }
 
 
 
 // Include config file
-include $_SERVER['DOCUMENT_ROOT'] . "/project-holders-project-3/db_conn.php";
+include $_SERVER['DOCUMENT_ROOT'] . "/ziyan-sem-4/db_conn.php";
 
 // Define variables and initialize with empty values
 $email = $password = "";
@@ -69,9 +69,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["privilage"] = $privilage;
                             $_SESSION["email"] = $email;
 
-                            // Redirect user to welcome page
-                            header("location:../admin-dashbord/table/admin-dashbord.php");
-                            exit;
+                            if ($_SESSION["privilage"] == 'student') {
+                                // Redirect user to welcome page
+                                header("location:../student/add-new.php");
+                                exit;
+                            }else{
+                                header("location:../student-table/student-table.php");
+                                exit;   
+                            }
                         } else {
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
