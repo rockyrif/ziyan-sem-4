@@ -36,7 +36,7 @@
             color: #91CC00;
         }
 
-        .hardy{
+        .kalmunai{
             color: #91CC00;
         }
 
@@ -118,23 +118,22 @@
         <nav class="navbar">
             <div class="container">
                 <a href="" class="navbar-brand fs-4">
-                    <img src="/rifna-sem-4-project/Images/logo.png" alt="" width="70">
+                    <img src="/ziyan-sem-4/images/logo.png" alt="" width="70">
                     <span class="container responsive-brand-item">
-                        Store management<span class="brand-br"><span class="hardy"> Hardy</span> ATI</span>
-                    </span>
+                        Zahira college<span class="brand-br"><span class="kalmunai"> Kalmunai </span> 
                 </a>
 
                 <div class="navbar-nav-outer ">
-                    <div class="nav-item-outer ">
-                        <a href="" class="nav-link nav-link-home active">HOME</a>
-                    </div>
+
                     <div class="nav-item-outer">
                         <a href=""
-                            class="nav-link nav-link-about">ABOUT ATI</a>
+                            class="nav-link nav-link-about">About School</a>
                     </div>
 
 
-                    <?php if (!isset ($_SESSION['username'])): ?>
+                    <?php if (!isset ($_SESSION['username'])): 
+                       
+                        ?>
                         <div class="nav-item-outer">
                             <a href="/ziyan-sem-4/pages/login-and-signup-page/index.php"
                                 class="nav-link nav-link-login">SIGN IN</a>
@@ -193,12 +192,9 @@
                             <?php endif; ?>
                             
 
-                            <li class="nav-item ">
-                                <a href="/rifna-sem-4-project/page/admin-dashbord/table/admin-dashbord.php"
-                                    class="nav-link nav-link-home active">HOME</a>
-                            </li>
+                           
                             <li class="nav-item">
-                                <a href="/rifna-sem-4-project/page/AboutUs-page/About-us.php"
+                                <a href="/ziyan-sem-4/page/about-school/about-school.php"
                                     class="nav-link nav-link-about">ABOUT
                                     ATI</a>
                             </li>
@@ -206,7 +202,7 @@
                             <?php if (isset ($_SESSION['username'])): ?>
                                 <li class="nav-item ">
                                     <button type="button" class="btn btn-danger offcanvas-button"
-                                        onclick="window.location.href='/rifna-sem-4-project/page/login-and-signup-page/log-out.php'">LOG
+                                        onclick="window.location.href='/ziyan-sem-4/pages/login-and-signup-page/log-out.php'">LOG
                                         OUT</button>
                                 </li>
                             <?php endif; ?>

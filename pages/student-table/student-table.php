@@ -112,162 +112,27 @@ session_start();
 
                             <div class="col-md-10">
                                 <form action="admin-dashbord.php" method="GET">
-                                    <div class="row container mb-3">
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`id_prefix`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`id_prefix`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                ID Prefix
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`slta_member_id`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`slta_member_id`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                SLTA Member ID
-                                            </label>
-                                        </div>
-                                        <!-- <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`member_id`"
-                                                name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`member_id`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                ID
-                                            </label>
-                                        </div> -->
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`first_name`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`first_name`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                First Name
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`last_name`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`last_name`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Last Name
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`email`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`email`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Email
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`phone1`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`phone1`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Phone1
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`phone2`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`phone2`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Phone2
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`date_of_birth`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`date_of_birth`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                DOB
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`address`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`address`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Address
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`member_type`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`member_type`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Member Type
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md">
-                                            <input class="form-check-input" type="checkbox" value="`occupation`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`occupation`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Occupation
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`school`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`school`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                School
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`gender`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`gender`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Gender
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`profile_url`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`profile_url`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Profile Picture
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`proof_url`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Pyament proof
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`payment_status`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`proof_url`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Payment status
-                                            </label>
-                                        </div>
-                                        <div class="form-check col-md-4">
-                                            <input class="form-check-input" type="checkbox" value="`registration_date`" name="column[]" id="flexCheckIndeterminate" <?= (isset($_GET['column']) && in_array('`registration_date`', $_GET['column'])) ? 'checked' : ''; ?>>
-                                            <label class="form-check-label" for="flexCheckIndeterminate">
-                                                Reg Date
-                                            </label>
-                                        </div>
-                                    </div>
+                                    
 
                                     <div class="row">
                                         <div class="col-md mb-3">
-                                            <input type="text" name="member-id" value="<?= isset($_GET['member-id']) ? $_GET['member-id'] : ''; ?>" class="form-control" placeholder="Member id">
+                                            <input type="text" name="grade" value="<?= isset($_GET['grade']) ? $_GET['grade'] : ''; ?>" class="form-control" placeholder="Grade">
                                         </div>
 
                                         <div class="col-md mb-3">
                                             <input type="text" name="name" value="<?= isset($_GET['name']) ? $_GET['name'] : '' ?>" class="form-control" placeholder="Name">
                                         </div>
 
-                                        <div class="col-md mb-2">
-                                            <select name="member-type" id="" class="form-select">
-                                                <option value="">Member type</option>
-                                                <option value="adult" <?= isset($_GET['member-type']) == true ? ($_GET['member-type'] == 'adult' ? 'selected' : '') : '' ?>>Adult</option>
-                                                <option value="child" <?= isset($_GET['member-type']) == true ? ($_GET['member-type'] == 'child' ? 'selected' : '') : '' ?>>Child</option>
-
-                                            </select>
-                                        </div>
 
                                         <div class="col-md mb-2">
-                                            <select name="payment-status" id="" class="form-select">
-                                                <option value="">Payment Status</option>
-                                                <option value="rejected" <?= isset($_GET['payment-status']) == true ? ($_GET['payment-status'] == 'rejected' ? 'selected' : '') : '' ?>>Rejected</option>
-                                                <option value="pending" <?= isset($_GET['payment-status']) == true ? ($_GET['payment-status'] == 'pending' ? 'selected' : '') : '' ?>>Pending</option>
-                                                <option value="approved" <?= isset($_GET['payment-status']) == true ? ($_GET['payment-status'] == 'child' ? 'selected' : '') : '' ?>>Approved</option>
+                                            <select name="application-status" id="" class="form-select">
+                                                <option value="">Application Status</option>
+                                                <option value="rejected" <?= isset($_GET['application-status']) == true ? ($_GET['application-status'] == 'rejected' ? 'selected' : '') : '' ?>>Rejected</option>
+                                                <option value="pending" <?= isset($_GET['application-status']) == true ? ($_GET['application-status'] == 'pending' ? 'selected' : '') : '' ?>>Pending</option>
+                                                <option value="approved" <?= isset($_GET['application-status']) == true ? ($_GET['application-status'] == 'approved' ? 'selected' : '') : '' ?>>Approved</option>
                                             </select>
                                         </div>
-
-                                        <div class="col-md mb-2">
-                                            <select name="month" id="" class="form-select">
-                                                <option value="">Reg Month</option>
-                                                <option value="01" <?= isset($_GET['month']) == true ? ($_GET['month'] == '01' ? 'selected' : '') : '' ?>>January</option>
-                                                <option value="02" <?= isset($_GET['month']) == true ? ($_GET['month'] == '02' ? 'selected' : '') : '' ?>>February</option>
-                                                <option value="03" <?= isset($_GET['month']) == true ? ($_GET['month'] == '03' ? 'selected' : '') : '' ?>>March</option>
-                                                <option value="04" <?= isset($_GET['month']) == true ? ($_GET['month'] == '04' ? 'selected' : '') : '' ?>>April</option>
-                                                <option value="05" <?= isset($_GET['month']) == true ? ($_GET['month'] == '05' ? 'selected' : '') : '' ?>>May</option>
-                                                <option value="06" <?= isset($_GET['month']) == true ? ($_GET['month'] == '06' ? 'selected' : '') : '' ?>>June</option>
-                                                <option value="07" <?= isset($_GET['month']) == true ? ($_GET['month'] == '07' ? 'selected' : '') : '' ?>>July</option>
-                                                <option value="08" <?= isset($_GET['month']) == true ? ($_GET['month'] == '08' ? 'selected' : '') : '' ?>>August</option>
-                                                <option value="09" <?= isset($_GET['month']) == true ? ($_GET['month'] == '09' ? 'selected' : '') : '' ?>>September</option>
-                                                <option value="10" <?= isset($_GET['month']) == true ? ($_GET['month'] == '10' ? 'selected' : '') : '' ?>>October</option>
-                                                <option value="11" <?= isset($_GET['month']) == true ? ($_GET['month'] == '11' ? 'selected' : '') : '' ?>>November</option>
-                                                <option value="12" <?= isset($_GET['month']) == true ? ($_GET['month'] == '12' ? 'selected' : '') : '' ?>>December</option>
-                                            </select>
-                                        </div>
+                                        
                                     </div>
 
                                     <div class="row">
@@ -286,18 +151,18 @@ session_start();
 
                 <!-- update payment status. start -->
                 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["member_id"]) && isset($_POST["status"])) {
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["id"]) && isset($_POST["status"])) {
                     include $_SERVER['DOCUMENT_ROOT'] . "/ziyan-sem-4/db_conn.php"; // Include database connection file
-                    $memberId = $_POST["member_id"];
+                    $studentID = $_POST["id"];
                     $status = $_POST["status"];
 
                     // Prepare and execute SQL statement to update payment status
-                    $sql = "UPDATE members SET payment_status = '$status' WHERE member_id = '$memberId'";
+                    $sql = "UPDATE students SET status = '$status' WHERE id = '$studentID'";
 
                     if ($conn->query($sql) === TRUE) {
-                        $_SESSION['response'] = "Payment status updated successfully."; // Store success message in session
+                        $_SESSION['response'] = "Application status updated successfully."; // Store success message in session
                     } else {
-                        $_SESSION['response'] = "Error updating payment status: " . $conn->error; // Store error message in session
+                        $_SESSION['response'] = "Error updating application status: " . $conn->error; // Store error message in session
                     }
 
                     exit();
@@ -363,7 +228,7 @@ session_start();
                                     <th scope="col">Member ID</th>
 
                                     <?php
-                                    if (isset($_GET['column']) && in_array('`slta_member_id`', $_GET['column'])) {
+                                    if (isset($_GET['column']) && in_array('`slta_id`', $_GET['column'])) {
                                     ?>
                                         <th scope="col">SLTA Member ID</th>
                                     <?php
@@ -476,7 +341,7 @@ session_start();
                                     ?>
 
                                     <?php
-                                    if (isset($_GET['column']) && in_array('`payment_status`', $_GET['column'])) {
+                                    if (isset($_GET['column']) && in_array('`status`', $_GET['column'])) {
                                     ?>
                                         <th scope="col">Status</th>
                                     <?php
@@ -533,7 +398,7 @@ session_start();
                                 }
 
                                 if (!empty($_GET['payment-status'])) {
-                                    $conditions[] = "payment_status = '{$_GET['payment-status']}'";
+                                    $conditions[] = "status = '{$_GET['payment-status']}'";
                                 }
 
                                 // Include database connection
@@ -717,7 +582,7 @@ session_start();
                                             ?>
 
                                             <?php
-                                            if (isset($_GET['column']) && in_array('`payment_status`', $_GET['column'])) {
+                                            if (isset($_GET['column']) && in_array('`status`', $_GET['column'])) {
                                             ?>
                                                 <td>
                                                     <!-- Form to update payment status -->
@@ -726,13 +591,13 @@ session_start();
                                                         <input type="hidden" name="member_id" value="<?php echo $row['member_id']; ?>">
                                                         <div style="display:flex; justify-content:center;">
                                                             <!-- Dropdown to select payment status -->
-                                                            <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"]) ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['member_id']; ?>, this.value)">
+                                                            <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["status"]) ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['member_id']; ?>, this.value)">
                                                                 <!-- Option for payment status Not yet -->
-                                                                <option value="rejected" class="rejected" <?php echo ($row["payment_status"] == 'rejected') ? "selected" : ""; ?>>Rejected</option>
+                                                                <option value="rejected" class="rejected" <?php echo ($row["status"] == 'rejected') ? "selected" : ""; ?>>Rejected</option>
                                                                 <!-- Option for payment status Paid -->
-                                                                <option value="approved" class="approved" <?php echo ($row["payment_status"] == 'approved') ? "selected" : ""; ?>>Approved</option>
+                                                                <option value="approved" class="approved" <?php echo ($row["status"] == 'approved') ? "selected" : ""; ?>>Approved</option>
                                                                 <!-- Option for payment status Paid -->
-                                                                <option value="pending" class="pending" <?php echo ($row["payment_status"] == 'pending') ? "selected" : ""; ?>>Pending</option>
+                                                                <option value="pending" class="pending" <?php echo ($row["status"] == 'pending') ? "selected" : ""; ?>>Pending</option>
                                                             </select>
                                                         </div>
                                                     </form>
@@ -761,7 +626,7 @@ session_start();
                                                 }
 
                                                 // JavaScript function to submit the form asynchronously
-                                                function updatePaymentStatus(memberId, status) {
+                                                function updatePaymentStatus(studentID, status) {
                                                     // Create a new XMLHttpRequest object
                                                     var xhr = new XMLHttpRequest();
 
@@ -785,7 +650,7 @@ session_start();
                                                     };
 
                                                     // Send the request
-                                                    xhr.send("member_id=" + memberId + "&status=" + status);
+                                                    xhr.send("member_id=" + studentID + "&status=" + status);
                                                 }
                                             </script>
                                         </tr>
@@ -812,26 +677,22 @@ session_start();
                         <table class="table table-hover text-center ">
                             <thead class="table-dark">
                                 <tr>
-                                    <th scope="col">ID Prefix</th>
-                                    <th scope="col">Member ID</th>
-                                    <th scope="col">SLTA Member ID</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">EMAIL</th>
                                     <th scope="col">First Name</th>
                                     <th scope="col">Last Name</th>
-                                    <th scope="col">Email</th>
                                     <th scope="col">Phone1</th>
                                     <th scope="col">Phone2</th>
                                     <th scope="col">DOB</th>
                                     <th scope="col">Address</th>
-                                    <th scope="col">Member Type</th>
-                                    <th scope="col">Occupation</th>
-                                    <th scope="col">School</th>
-                                    <th scope="col">Gender</th>
-                                    <th scope="col">Profile Pic</th>
-                                    <th scope="col">Payment proof</th>
-                                    <th scope="col">Status</th> 
-                                    <th scope="col">Reg Date</th>
-                                    <th scope="col" class="col-remove">Edit</th>
-                                    <th scope="col" class="col-remove">Delete</th>
+                                    <th scope="col">GRADE</th>
+                                    <th scope="col">SECTION</th>
+                                    <th scope="col">TERM</th>
+                                    <th scope="col">GENDER</th>
+                                    <th scope="col">STATUS</th>
+                                    <th scope="col">EDIT</th>
+                                    <th scope="col">DELTE</th>
+                                    
                                 </tr>
                             </thead>
 
@@ -840,21 +701,17 @@ session_start();
                             <tbody>
                                 <?php
                                 include $_SERVER['DOCUMENT_ROOT'] . "/ziyan-sem-4/db_conn.php";
-                                $sql = "SELECT * FROM `members` ORDER BY `member_id` DESC";
+                                $sql = "SELECT * FROM `students` ORDER BY `id` DESC";
                                 $result = mysqli_query($conn, $sql);
                                 mysqli_close($conn);
                                 while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
                                     <tr>
                                         <td>
-                                            <?php echo $row["id_prefix"]; ?>
-                                        </td>
-
-                                        <td>
-                                            <?php echo $row["member_id"] ?>
+                                            <?php echo $row["id"]; ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["slta_member_id"] ?>
+                                            <?php echo $row["email"] ?>
                                         </td>
                                         <td>
                                             <?php echo $row["first_name"] ?>
@@ -863,67 +720,55 @@ session_start();
                                             <?php echo $row["last_name"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["email"] ?>
-                                        </td>
-                                        <td>
                                             <?php echo $row["phone1"] ?>
                                         </td>
                                         <td>
                                             <?php echo $row["phone2"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["date_of_birth"] ?>
+                                            <?php echo $row["dob"] ?>
                                         </td>
                                         <td>
                                             <?php echo $row["address"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["member_type"] ?>
+                                            <?php echo $row["grade"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["occupation"] ?>
+                                            <?php echo $row["section"] ?>
                                         </td>
                                         <td>
-                                            <?php echo $row["school"] ?>
+                                            <?php echo $row["term"] ?>
                                         </td>
                                         <td>
                                             <?php echo $row["gender"] ?>
                                         </td>
-                                        <td>
-                                            <a href="../../../<?php echo $row["profile_url"] ?>">View</a>
-                                        </td>
-                                        <td>
-                                            <a href="../../../<?php echo $row["proof_url"] ?>">View</a>
-                                        </td>
+                                        
                                         <td>
                                             <!-- Form to update payment status -->
                                             <form method="post">
                                                 <!-- Hidden input field for fee_id -->
-                                                <input type="hidden" name="member_id" value="<?php echo $row['member_id']; ?>">
+                                                <!-- <input type="hidden" name="member_id" value="<?php echo $row['member_id']; ?>"> -->
                                                 <div style="display:flex; justify-content:center;">
                                                     <!-- Dropdown to select payment status -->
-                                                    <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["payment_status"]) ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['member_id']; ?>, this.value)">
+                                                    <select style="width:200px;" class="form-select payment-form-select <?php echo ($row["status"]) ?>" name="status" onchange="updatePaymentStatus(<?php echo $row['id']; ?>, this.value)">
                                                         <!-- Option for payment status Not yet -->
-                                                        <option value="rejected" class="rejected" <?php echo ($row["payment_status"] == 'rejected') ? "selected" : ""; ?>>Rejected</option>
+                                                        <option value="rejected" class="rejected" <?php echo ($row["status"] == 'rejected') ? "selected" : ""; ?>>Rejected</option>
                                                         <!-- Option for payment status Paid -->
-                                                        <option value="approved" class="approved" <?php echo ($row["payment_status"] == 'approved') ? "selected" : ""; ?>>Approved</option>
+                                                        <option value="approved" class="approved" <?php echo ($row["status"] == 'approved') ? "selected" : ""; ?>>Approved</option>
                                                         <!-- Option for payment status Paid -->
-                                                        <option value="pending" class="pending" <?php echo ($row["payment_status"] == 'pending') ? "selected" : ""; ?>>Pending</option>
+                                                        <option value="pending" class="pending" <?php echo ($row["status"] == 'pending') ? "selected" : ""; ?>>Pending</option>
                                                     </select>
                                                 </div>
                                             </form>
                                         </td>
-                                        
-                                        <td>
-                                            <?php echo $row["registration_date"] ?>
-                                        </td>
 
 
                                         <td class="col-remove">
-                                            <a href="edit.php?id=<?php echo $row["member_id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 "></i></a>
+                                            <a href="edit.php?id=<?php echo $row["id"] ?>" class="link-dark"><i class="fa-solid fa-pen-to-square fs-5 "></i></a>
                                         </td>
                                         <td class="col-remove">
-                                            <a href="delete.php?id=<?php echo $row["member_id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a>
+                                            <a href="delete.php?id=<?php echo $row["id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a>
                                         </td>
 
                                         <script>
@@ -932,7 +777,7 @@ session_start();
                                             }
 
                                             // JavaScript function to submit the form asynchronously
-                                            function updatePaymentStatus(memberId, status) {
+                                            function updatePaymentStatus(studentID, status) {
                                                 // Create a new XMLHttpRequest object
                                                 var xhr = new XMLHttpRequest();
 
@@ -956,7 +801,7 @@ session_start();
                                                 };
 
                                                 // Send the request
-                                                xhr.send("member_id=" + memberId + "&status=" + status);
+                                                xhr.send("id=" + studentID + "&status=" + status);
                                             }
                                         </script>
 
