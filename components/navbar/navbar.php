@@ -127,7 +127,7 @@
 
                     <div class="nav-item-outer">
                         <a href=""
-                            class="nav-link nav-link-about">About School</a>
+                            class="nav-link nav-link-about">ABOUT SCHOOL</a>
                     </div>
 
 
@@ -195,8 +195,7 @@
                            
                             <li class="nav-item">
                                 <a href="/ziyan-sem-4/page/about-school/about-school.php"
-                                    class="nav-link nav-link-about">ABOUT
-                                    ATI</a>
+                                    class="nav-link nav-link-about">ABOUT SCHOOL</a>
                             </li>
 
                             <?php if (isset ($_SESSION['username'])): ?>
