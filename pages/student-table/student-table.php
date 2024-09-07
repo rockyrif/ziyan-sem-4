@@ -140,6 +140,7 @@ session_start();
                                         <button class="btn btn-dark" type="submit">Filter</button>
                                         <a href="student-table.php" type="reset" class="btn btn-dark">Reset</a>
                                         <button class="btn btn-dark print-btn" onclick="window.print();">Print</button>
+                                        <a href="send-mail.php" type="reset" class="btn btn-dark">Send mail</a>
                                     </div>
                                 </div>
                             </form>

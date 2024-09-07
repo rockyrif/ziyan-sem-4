@@ -86,9 +86,9 @@ session_start();
                   </div>
                </div>
 
-               <div class="mb-3" style="display:none;">
+               <div class="mb-3">
                   <label class="form-label">Email:</label>
-                  <input type="email" class="form-control" name="email" placeholder="name@example.com" value="<?= (isset($_SESSION['email'])) ?  $_SESSION["email"] : ''; ?>">
+                  <input type="email" class="form-control" name="email" placeholder="name@example.com" value="">
                </div>
 
                <div class="mb-3">

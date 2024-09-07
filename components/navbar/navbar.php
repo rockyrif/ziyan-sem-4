@@ -131,20 +131,6 @@
                     </div>
 
 
-                    <?php if (!isset ($_SESSION['username'])): 
-                       
-                        ?>
-                        <div class="nav-item-outer">
-                            <a href="/ziyan-sem-4/pages/login-and-signup-page/index.php"
-                                class="nav-link nav-link-login">SIGN IN</a>
-                        </div>
-                        <div class="nav-item-outer">
-                            <button type="button" class="btn btn-success outer-button"
-                                onclick="window.location.href='/rifna-sem-4-project/page/login-and-signup-page/index.php'">SIGN
-                                UP</button>
-                        </div>
-                    <?php endif; ?>
-
                 </div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#myNavBar">
@@ -159,33 +145,17 @@
                     </div>
                     <div class="offcanvas-body">
 
-                        <?php if (!isset ($_SESSION['username'])): ?>
-                            <div style="width: 100%; display: flex; align-items: center; justify-content: space-between;">
-
-                                <a href="#"
-                                    class="nav-link nav-link-login">SIGN
-                                    IN</a>
-                                <button type="button" class="btn btn-success offcanvas-button"
-                                    onclick="window.location.href='#'">SIGN
-                                    UP</button>
-
-                            </div>
-                        <?php endif; ?>
-
-
 
                         <ul class="navbar-nav justify-content-end flex-grow-1">
 
                            
-                        <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") : ?>
+                        <?php if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "teacher") : ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         ADMIN DASHBORD
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="/rifna-sem-4-project/page/admin-manager/admin-manager.php">Admin manager</a></li>
-                                        
-
+                                        <li><a class="dropdown-item" href="/ziyan-sem-4/pages/admin-manager/admin-manager.php">Admin manager</a></li>
                                     </ul>
 
                                 </li>

@@ -174,7 +174,6 @@ session_start();
 
                <div class="mb-3">
                   <button type="submit" class="btn btn-success" name="submit">Apply</button>
-                  <a href="admin-dashbord.php" class="btn btn-danger ">Cancel</a>
                </div>
             </form>
          </div>
