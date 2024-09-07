@@ -7,7 +7,7 @@ session_start();
    include $_SERVER['DOCUMENT_ROOT'] . "/ziyan-sem-4/db_conn.php";
    if (isset($_POST["submit"])) {
       
-      $email = $_SESSION['email'];
+      $email = $_POST['email'];
       $first_name = $_POST['first_name'];
       $last_name = $_POST['last_name'];
       $phone1 = $_POST['phone1'];

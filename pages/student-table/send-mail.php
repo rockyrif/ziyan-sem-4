@@ -67,7 +67,7 @@ use PHPMailer\PHPMailer\Exception;
 
             <!-- tittle start -->
             <div class="admin-dashbord-tittle mb-4" style="position: relative;">
-                <P class="" style=" margin-bottom: 0 !important;">Send mail</P>
+                <P class="" style=" margin-bottom: 0 !important;">SEND MAIL</P>
                 <div class="time" style=" position: absolute; right: 0%;">
                     <?php
                     // Set the default timezone
@@ -139,14 +139,13 @@ use PHPMailer\PHPMailer\Exception;
                                 </div>
 
                                 <div class="col-md mb-3">
-                                    <input type="text" name="description" value="" class="form-control" placeholder="Description eg: Your exam date is 2024-05-03">
+                                    <input type="text" name="description" value="<?= isset($_GET['description']) ? $_GET['description'] : '' ?>" class="form-control" placeholder="Description eg: Your exam date is 2024-05-03">
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-4 mb-2">
                                         <button class="btn btn-dark" type="submit">Send mail</button>
-                                        <a href="send-mail.php" type="reset" class="btn btn-dark">Reset</a>
-                                        <button class="btn btn-dark print-btn" onclick="window.print();">Print</button>
+                                        <a href="student-table.php" type="reset" class="btn btn-dark">Reset</a>
                                     </div>
                                 </div>
                             </form>
@@ -184,17 +183,17 @@ use PHPMailer\PHPMailer\Exception;
             // Add WHERE clause if conditions are provided
 
             $sql = $selectQuery . " WHERE " . implode(" AND ", $conditions) . " ORDER BY `id` DESC";
-            // echo $sql;
+            // echo $sql. "<br>";
 
 
             // Execute the SQL query
             $result = mysqli_query($conn, $sql);
 
-
+           
             // Check if query executed successfully
             if ($result && mysqli_num_rows($result) > 0) {
                 // Display table header
-
+                echo "Below students will get email messages". "<br><br>";
                 // Fetch and display data
                 while ($row = mysqli_fetch_assoc($result)) {
 
@@ -235,13 +234,19 @@ use PHPMailer\PHPMailer\Exception;
                     } catch (Exception $e) {
                         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                     }
-
-                    $_SESSION['response'] = "Email sent successfully";
-                   
-                    header("Location: send-mail.php");
                     
-                    exit;
+                    
+                    echo $row["id"] . " ";
+                    echo $row["last_name"] . " ";
+                    echo $row["email"]. "<br>";
+
+                    // $_SESSION['response'] = "Email sent successfully";  
+                    // header("Location: send-mail.php");
+                    // exit;
                 }
+                echo "Email Send successfully". "<br><br>";
+            }else{
+                echo "No record found";
             }
             ?>
 
