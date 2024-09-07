@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2024 at 07:32 AM
+-- Generation Time: Sep 07, 2024 at 09:52 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `students`
+--
+
+CREATE TABLE `students` (
+  `id` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `phone1` int(255) NOT NULL,
+  `phone2` int(255) NOT NULL,
+  `dob` date NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `grade` int(255) NOT NULL,
+  `section` varchar(255) NOT NULL,
+  `term` int(255) NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user_login`
 --
 
@@ -40,11 +62,17 @@ CREATE TABLE `user_login` (
 --
 
 INSERT INTO `user_login` (`user_id`, `username`, `password`, `email`, `privilage`) VALUES
-(16, 'default', '$2y$10$0FoYWhtBQ8.9Zb2w9TaVbeQARoSBR8beA3zYfupftE2yWFYUavmM2', 'default@gmail.com', 'student');
+(16, 'default', '$2y$10$0FoYWhtBQ8.9Zb2w9TaVbeQARoSBR8beA3zYfupftE2yWFYUavmM2', 'default@gmail.com', 'teacher');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `students`
+--
+ALTER TABLE `students`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user_login`
@@ -59,10 +87,16 @@ ALTER TABLE `user_login`
 --
 
 --
+-- AUTO_INCREMENT for table `students`
+--
+ALTER TABLE `students`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `user_login`
 --
 ALTER TABLE `user_login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
