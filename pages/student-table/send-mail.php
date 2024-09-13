@@ -189,11 +189,11 @@ use PHPMailer\PHPMailer\Exception;
             // Execute the SQL query
             $result = mysqli_query($conn, $sql);
 
-           
+
             // Check if query executed successfully
             if ($result && mysqli_num_rows($result) > 0) {
                 // Display table header
-                echo "Below students will get email messages". "<br><br>";
+                echo "Below students will get email messages" . "<br><br>";
                 // Fetch and display data
                 while ($row = mysqli_fetch_assoc($result)) {
 
@@ -204,10 +204,10 @@ use PHPMailer\PHPMailer\Exception;
 
                     try {
                         $mail->isSMTP();
-                        $mail->Host = 'mail.adtennis.lk';
+                        $mail->Host = 'smtp.gmail.com';
                         $mail->SMTPAuth = true;
-                        $mail->Username = 'admin@adtennis.lk';
-                        $mail->Password = '2l01xVKb:EO.9p';
+                        $mail->Username = 'ziyanmaleek2001@gmail.com';
+                        $mail->Password = 'zpjqxvmhswrzrdhy';
                         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
                         $mail->Port = 465;
 
@@ -220,7 +220,7 @@ use PHPMailer\PHPMailer\Exception;
                             )
                         );
 
-                        $mail->setFrom('admin@adtennis.lk', 'Auto mail generator');
+                        $mail->setFrom('ziyanmaleek2001@gmail.com', 'Notice about your exam');
                         $mail->addAddress($row["email"], '');
 
                         $mail->isHTML(true);
@@ -234,18 +234,18 @@ use PHPMailer\PHPMailer\Exception;
                     } catch (Exception $e) {
                         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                     }
-                    
-                    
+
+
                     echo $row["id"] . " ";
                     echo $row["last_name"] . " ";
-                    echo $row["email"]. "<br>";
+                    echo $row["email"] . "<br>";
 
                     // $_SESSION['response'] = "Email sent successfully";  
                     // header("Location: send-mail.php");
                     // exit;
                 }
-                echo "Email Send successfully". "<br><br>";
-            }else{
+                echo "Email Send successfully" . "<br><br>";
+            } else {
                 echo "No record found";
             }
             ?>
