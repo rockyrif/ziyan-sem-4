@@ -177,78 +177,83 @@ use PHPMailer\PHPMailer\Exception;
                 $conditions[] = "status = '{$_GET['application-status']}'";
             }
 
-            // Include database connection
+
             include $_SERVER['DOCUMENT_ROOT'] . "/ziyan-sem-4/db_conn.php";
 
-            // Add WHERE clause if conditions are provided
-
-            $sql = $selectQuery . " WHERE " . implode(" AND ", $conditions) . " ORDER BY `id` DESC";
-            // echo $sql. "<br>";
 
 
-            // Execute the SQL query
-            $result = mysqli_query($conn, $sql);
-
-
-            // Check if query executed successfully
-            if ($result && mysqli_num_rows($result) > 0) {
-                // Display table header
-                echo "Below students will get email messages" . "<br><br>";
-                // Fetch and display data
-                while ($row = mysqli_fetch_assoc($result)) {
-
-                    // Include PHPMailer autoload
-                    require '../../PHP-mailer/vendor/autoload.php';
-
-                    $mail = new PHPMailer(true);
-
-                    try {
-                        $mail->isSMTP();
-                        $mail->Host = 'smtp.gmail.com';
-                        $mail->SMTPAuth = true;
-                        $mail->Username = 'ziyanmaleek2001@gmail.com';
-                        $mail->Password = 'zpjqxvmhswrzrdhy';
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                        $mail->Port = 465;
-
-                        // Set custom CA certificates to trust the self-signed certificate
-                        $mail->SMTPOptions = array(
-                            'ssl' => array(
-                                'verify_peer' => false,
-                                'verify_peer_name' => false,
-                                'allow_self_signed' => true
-                            )
-                        );
-
-                        $mail->setFrom('ziyanmaleek2001@gmail.com', 'Notice about your exam');
-                        $mail->addAddress($row["email"], '');
-
-                        $mail->isHTML(true);
-                        $mail->Subject = 'Response to Exam application';
-                        $mail->Body    = "Your exam Index is ZCK-2025-" . $row["id"] . "<br>" . $_GET['description'];
-                        $mail->AltBody = "";
-
-
-                        $mail->send();
-                        // echo 'Message has been sent';
-                    } catch (Exception $e) {
-                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                    }
-
-
-                    echo $row["id"] . " ";
-                    echo $row["last_name"] . " ";
-                    echo $row["email"] . "<br>";
-
-                    // $_SESSION['response'] = "Email sent successfully";  
-                    // header("Location: send-mail.php");
-                    // exit;
-                }
-                echo "Email Send successfully" . "<br><br>";
+            // Build the SQL query based on whether there are conditions
+            if (count($conditions) > 0) {
+                $sql = $selectQuery . " WHERE " . implode(" AND ", $conditions) . " ORDER BY id DESC";
             } else {
-                echo "No record found";
+                echo "Please select conditions in order to send email";
+            }
+
+
+            if (count($conditions) > 0) {
+                $result = mysqli_query($conn, $sql);
+
+
+                // Check if query executed successfully
+                if ($result && mysqli_num_rows($result) > 0) {
+
+                    echo "Below students will get email messages" . "<br><br>";
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+
+
+                        require '../../PHP-mailer/vendor/autoload.php';
+
+                        $mail = new PHPMailer(true);
+
+                        try {
+                            $mail->isSMTP();
+                            $mail->Host = 'smtp.gmail.com';
+                            $mail->SMTPAuth = true;
+                            $mail->Username = 'ziyanmaleek2001@gmail.com';
+                            $mail->Password = 'zpjqxvmhswrzrdhy';
+                            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                            $mail->Port = 465;
+
+
+                            $mail->SMTPOptions = array(
+                                'ssl' => array(
+                                    'verify_peer' => false,
+                                    'verify_peer_name' => false,
+                                    'allow_self_signed' => true
+                                )
+                            );
+
+                            $mail->setFrom('ziyanmaleek2001@gmail.com', 'Notice about your exam');
+                            $mail->addAddress($row["email"], '');
+
+                            $mail->isHTML(true);
+                            $mail->Subject = 'Response to Exam application';
+                            $mail->Body    = "Your exam Index is ZCK-2025-" . $row["id"] . "<br>" . $_GET['description'];
+                            $mail->AltBody = "";
+
+
+                            $mail->send();
+                        } catch (Exception $e) {
+                            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                        }
+
+
+                        echo $row["id"] . " ";
+                        echo $row["last_name"] . " ";
+                        echo $row["email"] . "<br>";
+
+                        // $_SESSION['response'] = "Email sent successfully";  
+                        // header("Location: send-mail.php");
+                        // exit;
+                    }
+                    echo "Email Send successfully" . "<br><br>";
+                } else {
+                    echo "No record found";
+                }
             }
             ?>
+
 
         </div>
         <!-- admin-dashbord-end -->
@@ -265,7 +270,7 @@ use PHPMailer\PHPMailer\Exception;
 
 </html>
 <?php
-// Existing code
+
 
 ob_end_flush(); // End output buffering
 ?>
