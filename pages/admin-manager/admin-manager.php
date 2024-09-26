@@ -1,9 +1,7 @@
 <?php
 session_start();
 ?>
-<?php
-// if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") { 
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -149,7 +147,7 @@ session_start();
                 // Call the restoreScrollPositions function when the page loads
                 window.onload = function() {
                     restoreScrollPositions();
-                    hideLoadingOverlay();
+                   
                 };
             </script>
             <!-- scroll to same position when reload. end -->
@@ -408,7 +406,7 @@ session_start();
 
 
 
-                    <!-- Displaying member fees table -->
+                    <!-- Displaying student table -->
                     <table class="table table-hover text-center">
                         <!-- Table headers -->
                         <thead class="table-dark">
@@ -537,8 +535,3 @@ session_start();
 </body>
 
 </html>
-<?php
-// } else {
-//     header("Location: ../../../index.php");
-// } 
-?>

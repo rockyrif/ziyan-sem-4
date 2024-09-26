@@ -33,7 +33,7 @@ if ($_SESSION["privilage"] === "teacher") {
         }
     } else {
         // Provide an error message if 'id' parameter is missing or invalid
-        echo "Invalid member ID.";
+        echo "Invalid student ID.";
     }
 
     // Close the connection

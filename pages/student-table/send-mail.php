@@ -7,9 +7,6 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 ?>
-<?php
-// if (isset($_SESSION["username"]) && $_SESSION["privilage"] === "admin") { 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -243,9 +240,7 @@ use PHPMailer\PHPMailer\Exception;
                         echo $row["last_name"] . " ";
                         echo $row["email"] . "<br>";
 
-                        // $_SESSION['response'] = "Email sent successfully";  
-                        // header("Location: send-mail.php");
-                        // exit;
+                        
                     }
                     echo "Email Send successfully" . "<br><br>";
                 } else {

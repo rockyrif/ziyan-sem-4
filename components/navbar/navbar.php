@@ -123,7 +123,7 @@
                         Zahira college<span class="brand-br"><span class="kalmunai"> Kalmunai </span> 
                 </a>
 
-                <div class="navbar-nav-outer ">
+                <!-- <div class="navbar-nav-outer ">
 
                     <div class="nav-item-outer">
                         <a href=""
@@ -131,7 +131,7 @@
                     </div>
 
 
-                </div>
+                </div> -->
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#myNavBar">
                     <span class="navbar-toggler-icon"></span>
@@ -207,7 +207,7 @@
         <!-- Aleart end -->
     </div>
 
-<script src="/rifna-sem-4-project/components/navbar/navbar.js"></script>
+<script src="/ziyan-sem-4/components/navbar/navbar.js"></script>
 
     <!-- Navbar end -->
 </body>

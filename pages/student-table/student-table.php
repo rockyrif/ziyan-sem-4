@@ -266,9 +266,11 @@ session_start();
                             include $_SERVER['DOCUMENT_ROOT'] . "/ziyan-sem-4/db_conn.php";
 
                             // Add WHERE clause if conditions are provided
-
-                            $sql = $selectQuery . " WHERE " . implode(" AND ", $conditions) . " ORDER BY `id` DESC";
-                            echo $sql;
+                            if (count($conditions) > 0) {
+                                $sql = $selectQuery . " WHERE " . implode(" AND ", $conditions) . " ORDER BY `id` DESC";
+                            } else {
+                                $sql = $selectQuery;
+                            }
 
 
                             // Execute the SQL query
@@ -347,6 +349,7 @@ session_start();
                                             <a href="delete.php?id=<?php echo $row["id"] ?>" class="link-dark" onclick="return confirmDelete();"><i class="fa-solid fa-trash fs-5"></i></a>
                                         </td>
 
+                                        <!-- Auto submit and delete conformation start -->
                                         <script>
                                             function confirmDelete() {
                                                 return confirm("Are you sure you want to delete this record?");
@@ -380,6 +383,7 @@ session_start();
                                                 xhr.send("id=" + studentID + "&status=" + status);
                                             }
                                         </script>
+                                        <!-- Auto submit and delete conformation end -->
                                     </tr>
 
                                 <?php }

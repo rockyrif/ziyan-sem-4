@@ -55,7 +55,7 @@ session_start();
       <link href="https://db.onlinewebfonts.com/c/1f182a2cd2b60d5a6ac9667a629fbaae?family=PF+Din+Stencil+W01+Bold" rel="stylesheet">
       <!-- online fonts end -->
 
-      <title>Gym add</title>
+      <title>Application</title>
    </head>
 
    <body>
